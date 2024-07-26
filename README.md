@@ -39,9 +39,9 @@ pip install Flask celery
 
 Set the `EMAIL_PASSWORD` environment variable:
 
-    ```
+    
     export EMAIL_PASSWORD=your_email_password
-    ```
+    
 
 
 Make sure to replace your_email_password with your actual email app password.
@@ -120,7 +120,7 @@ Remember to activate the virtual environment.
 python3 app.py
 ```
 
-2. Start the Celery worker:
+2. Start the Celery worker: In another terminal
 
     ```
     celery -A tasks worker --loglevel=info
