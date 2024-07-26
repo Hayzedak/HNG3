@@ -44,7 +44,7 @@ Set the `EMAIL_PASSWORD` environment variable:
     
 
 
-Make sure to replace your_email_password with your actual email app password.
+Make sure to replace your_email_password with your actual email [app password] (https://myaccount.google.com/apppasswords).
 
 ### 5. Initialize RabbitMQ
 
@@ -54,6 +54,15 @@ Ensure that RabbitMQ is running on your system. You can start RabbitMQ with:
 sudo systemctl start rabbitmq-server
 ```
 
+### 6. Ensure Log Directory Exists 
+
+Ensure the /var/log/messaging_system.log file exists:
+
+```
+sudo mkdir -p /var/log
+sudo touch /var/log/messaging_system.log
+
+```
 ### 6. Configure Nginx
 
 Install Nginx if it's not already installed:
@@ -120,7 +129,7 @@ Remember to activate the virtual environment.
 python3 app.py
 ```
 
-2. Start the Celery worker: In another terminal
+2. Start the Celery worker: In another terminal, ensure you activate the virtual env.
 
     ```
     celery -A tasks worker --loglevel=info
